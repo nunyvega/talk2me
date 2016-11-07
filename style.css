@@ -200,7 +200,7 @@ ul{
 #relCon_profile{
 	justify-content: space-around;
 	background-color: #F0F3FB;
-	
+
 
 }
 
@@ -279,7 +279,7 @@ ul{
 #prompt_container{
 	display:flex;
 	padding-bottom: 24px;
-	
+
 	display:flex;
 	justify-content: center;
 }
@@ -400,7 +400,3 @@ ul{
 	border-top: 2px solid rgb(240,240,255);
 
 }
-
-
-
-
