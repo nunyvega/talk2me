@@ -78,7 +78,7 @@
     <div id="container">
       <div id="header">
         <div id="headerContainer">
-          <div id="brandContainer"><h1>Talk 2 Me, plz!</h1></div>
+          <div id="brandContainer"> <a href='index.html'><h1>Talk 2 Me</h1></a></div>
           <form action="./search.php" id="searchBar"><input type="text" name="searchKeyword" id="searchField" placeholder="search"></form>
           <div id="loginContainer">
             <p class="bttn loginBttn" id="login">Log-in</p>
@@ -133,8 +133,10 @@
 <input id="pregunta" type="text"/ name="pregunta">
 <input type="submit" value="send info" onsubmit="return questions(pregunta)">
 </form>
-<button onclick="questions()">Submit</button>
+<button onclick="questions(pregunta)">Submit</button>
 
+<script>
+document.getElementById('pregunta').value
               </div>
 
               <div class="relCon_section" id="relCon_alsoLike">

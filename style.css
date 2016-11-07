@@ -2,7 +2,7 @@
 /*-----------globals classes ----------*/
 
 body{
-	font-family: Baloo Thambi;
+	font-family: helvetica;
 
 }
 ul{
@@ -27,7 +27,7 @@ ul{
 
 #container{
 	padding:0;
-	background-color: rgb(240,240,255);
+	background-color: #D6E4E1;
 }
 
 #content{
@@ -44,6 +44,25 @@ ul{
 	margin: 42px auto;
 
 }
+a:link {
+    text-decoration: none;
+		color: white;
+}
+
+a:visited {
+    text-decoration: none;
+		color: white;
+}
+
+a:hover {
+    text-decoration: none;
+		color: white;
+}
+
+a:active {
+    text-decoration: none;
+		color: white;
+}
 
 /*--------- sections ---------*/
 
@@ -51,7 +70,7 @@ ul{
 #header{
 	margin: -6px 0px 28px 0px;
 	height: 80px;
-	background-color: #50C5B7;
+	background-color: #8C9C9A;
 	color: white;
 
 	display: flex;
@@ -110,11 +129,11 @@ ul{
 
 }
 #login{
-	background-color:#6184D8;
+	background-color:#A31E39;
 
 }
 #signup{
-	background-color: #9CEC5B;
+	background-color: #A31E39;
 }
 
 #mainContainer{
@@ -152,7 +171,7 @@ ul{
 
 #socialBttn{
 
-	color:rgb(90,90,90);
+	color:#485C5A;
 	font-size: 14px;
 	line-height: 26px;
 	padding: 0px 12px;
@@ -199,7 +218,7 @@ ul{
 
 #relCon_profile{
 	justify-content: space-around;
-	background-color: #F0F3FB;
+	background-color: #D6E4E1;
 
 
 }
@@ -213,15 +232,15 @@ ul{
 	margin-bottom: 16px;
 }
 #talkingTo{
-	background-color: #6184D8;
+	background-color: #485C5A;
 }
 
 #talkAbout{
-	background-color: #9CEC5B;
+	background-color: #485C5A;
 
 }
 #alsoLike{
-	background-color: #F0F465;
+	background-color: #485C5A;
 }
 
 #userName{
@@ -238,7 +257,7 @@ ul{
 	display:inline-block;
 	width:230px;
 	padding: 20px 0px;
-	font-family: Montserrat;
+	font-family: helvetica;
 	color: rgb(110,110,110);
 
 }
@@ -252,16 +271,16 @@ ul{
 }
 
 #relCon_prompt{
-	background-color: #F6FDF0;
+	background-color: #485C5A;
 	color: rgb(110,110,110);
 
 	font-size: 16px;
 
 	line-height: 20px;
-	background-color: #DBF8C3;
+	background-color: #D6E4E1;
 }
 #relCon_prompt p{
-	font-family: Montserrat;
+	font-family: helvetica;
 }
 #relConTitle{
 	width:100%;
@@ -294,7 +313,7 @@ ul{
 
 #ask_bttn {
 	font-size: 16px;
-	background-color: #9CEC5B;
+	background-color: #D6E4E1;
 	display:inline-block;
 	color: rgb(110,110,110);
 	padding: 9px 18px 9px 18px;
@@ -303,7 +322,7 @@ ul{
 }
 
 #relCon_alsoLike{
-	background-color: #FCFDE3;
+	background-color: #D6E4E1;
 }
 
 #userSubjects{
@@ -351,12 +370,14 @@ ul{
 	justify-content: space-around;
 }
 .friendProfile{
-	border: 1px solid rgb(210,210,210);
+	border: 5px solid #d5d6d2;
+	background-color: #ffffff;
 	padding: 25px;
-	font-family: Montserrat;
+	font-family: helvetica;
 	font-size: 15px;
 	width: 220px;
 	margin-bottom: 22px;
+	border-radius: 5px;
 }
 #friendProfilePicture img{
 	width:102px;
@@ -380,17 +401,16 @@ ul{
 }
 #friendTalks li{
 	display:inline-block;
-	font-style: italic;
 	font-size:13px;
 	padding: 1px 2px;
 	margin: 2px;
-	background-color: rgb(240,240,255);
+	background-color: #ffffff;
 }
 
 
 
 #footer{
-	background-color:#50C5B7;
+	background-color:gray;
 	margin-top: 35px;
 	height:130px;
 	line-height: 130px;
