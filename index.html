@@ -127,19 +127,16 @@
                 <p>Enter a word to search as a trigger for a conversation with me!</p>
 
                 <p>I will tell you about the term, according by what I understand by it :)</p>
-                <center><div id="prompt_container"><form id="frm1" action="form_action.asp"> <input type="text" name="question" value="1 word questions"><br><p class="bttn" id="ask_bttn" onclick="questions(question)">Ask me!</p></div></center>
-                  <form action="action_page.php">
+                <center> <div id="prompt_container">
 
-  <input type="text" name="question" value="1 word questions"><br>
-
-  <input type="submit" value="Submit">
+<form method="post" action="#">
+<input id="pregunta" type="text"/ name="pregunta">
+<input type="submit" value="send info" onsubmit="return questions(pregunta)">
 </form>
+<button onclick="questions()">Submit</button>
 
               </div>
 
-
-
-              </form>
               <div class="relCon_section" id="relCon_alsoLike">
                 <h3 class="relCon_title" id="alsoLike">I also like to talk about:</h3>
                 <ul id="userSubjects">  <!--en esta clase tendríamos que programar el javascript que cargue los subjects según el usuario que se está viendo. La información tendría que llegar de un query que se haga al cargar la página para que cada subject ya tenga un "case" asignado -->
