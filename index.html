@@ -5,7 +5,7 @@
        <link href="style.css" type="text/css" rel="stylesheet"/>
        <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Montserrat: 400, 700" rel="stylesheet">
-
+    <!-- cambie todas las tipos a helvetica por ahora, mepa que le vamos a dar una estetica un toque mas seria, asi q no tamos usando esas tipos-->
         <script>
           function linkcases(caseNumber){
             switch (caseNumber){
@@ -38,8 +38,8 @@
                 break;
             }
           }
-
           function questions(question){
+            var question = document.getElementById('pregunta').value
             switch (question){
               case "why":
                 document.getElementById("videoPlayer").src="https://www.youtube.com/embed/YLGx5Pbcbuk"; //Ostera dormido
@@ -70,6 +70,7 @@
                 break;
             }
           }
+
 
         </script>
 
@@ -130,13 +131,11 @@
                 <center> <div id="prompt_container">
 
 <form method="post" action="#">
-<input id="pregunta" type="text"/ name="pregunta">
-<input type="submit" value="send info" onsubmit="return questions(pregunta)">
+<input id="pregunta" type="text"/ name="pregunta" onsubmit="questions(pregunta)"> <!--el onsubmit no funciona, apretando enter no dispara la opcion, solo dandole clic al boton que esta afuera del form (agregue un botn adentro del form con las mismas propiedades y no funciona) -->
 </form>
 <button onclick="questions(pregunta)">Submit</button>
 
-<script>
-document.getElementById('pregunta').value
+
               </div>
 
               <div class="relCon_section" id="relCon_alsoLike">
