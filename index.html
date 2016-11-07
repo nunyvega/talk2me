@@ -39,6 +39,38 @@
             }
           }
 
+          function questions(question){
+            switch (question){
+              case "why":
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/YLGx5Pbcbuk"; //Ostera dormido
+                break;
+              case "how":
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/yO0gHLGfd8Q"; //Caminos del norte
+                break;
+              case "who":
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/KIVeSDSu_M4"; //Hernan Ruiz Diaz
+                break;
+              case "where":
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/JD2Zw7PayoU"; //Pato Sanchez
+                break;
+              case "name":
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/L5bU9tb417I"; //Manu Pellagata
+                break;
+              case "when":
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/WeVvR_ESOs8"; //Tom Craig
+                break;
+              case 'what for':
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/G9LsEH8kbT4"; //Kiwi
+                break;
+              case 'what':
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/cJj9uBv0qbI"; //Tess Parks
+                break;
+              default:
+                document.getElementById("videoPlayer").src="https://www.youtube.com/embed/YQhgEbPo2mY"; // Allah Lahs
+                break;
+            }
+          }
+
         </script>
 
     </head>
@@ -95,9 +127,13 @@
                 <p>Enter a word to search as a trigger for a conversation with me!</p>
 
                 <p>I will tell you about the term, according by what I understand by it :)</p>
-                <center><div id="prompt_container"><input id="prompt"><p class="bttn" id="ask_bttn" onclick="#()">Ask me!</p></div></center>
+                <center><div id="prompt_container"><form id="frm1" action="form_action.asp"> <input type="text" name="question" value="1 word questions"><br><p class="bttn" id="ask_bttn" onclick="questions(question)">Ask me!</p></div></center>
+
               </div>
 
+
+
+              </form>
               <div class="relCon_section" id="relCon_alsoLike">
                 <h3 class="relCon_title" id="alsoLike">I also like to talk about:</h3>
                 <ul id="userSubjects">  <!--en esta clase tendríamos que programar el javascript que cargue los subjects según el usuario que se está viendo. La información tendría que llegar de un query que se haga al cargar la página para que cada subject ya tenga un "case" asignado -->
