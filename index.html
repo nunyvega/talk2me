@@ -7,7 +7,7 @@
        <link href="https://fonts.googleapis.com/css?family=Montserrat: 400, 700" rel="stylesheet">
     <!-- cambie todas las tipos a helvetica por ahora, mepa que le vamos a dar una estetica un toque mas seria, asi q no tamos usando esas tipos-->
         <script type='text/javascript' src='script.js'></script>
-        
+
 
     </head>
 <body>
@@ -65,10 +65,10 @@
                 <p>I will tell you about the term, according by what I understand by it :)</p>
                 <center> <div id="prompt_container">
 
-
-<input id="questionField" type="text" name="question" onkeypress="isEnter()"> <!--el onsubmit no funciona, apretando enter no dispara la opcion, solo dandole clic al boton que esta afuera del form (agregue un botn adentro del form con las mismas propiedades y no funciona) -->
-
-<button onclick="questions()">Submit</button>
+<form method="post" action="#">
+<input id="pregunta" type="text"/ name="pregunta" onsubmit="questions(pregunta)"> <!--el onsubmit no funciona, apretando enter no dispara la opcion, solo dandole clic al boton que esta afuera del form (agregue un botn adentro del form con las mismas propiedades y no funciona) -->
+</form>
+<button onclick="questions(pregunta)" >Submit</button>
 
 
               </div>

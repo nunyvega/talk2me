@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function openLogin(){
   document.getElementById("loginFormContainer").style="display:block";
 }
@@ -26,6 +27,8 @@ function checkPswd(){
 
 
 
+=======
+>>>>>>> dap
 function linkcases(caseNumber){
   switch (caseNumber){
     case 1:
@@ -57,6 +60,7 @@ function linkcases(caseNumber){
       break;
   }
 }
+<<<<<<< HEAD
 
 function isEnter(event){
 
@@ -73,6 +77,10 @@ function isEnter(event){
 
 function questions(question){
   var question = document.getElementById('questionField').value
+=======
+function questions(question){
+  var question = document.getElementById('pregunta').value
+>>>>>>> dap
   switch (question){
     case "why":
       document.getElementById("videoPlayer").src="https://www.youtube.com/embed/YLGx5Pbcbuk"; //Ostera dormido
