@@ -1,0 +1,52 @@
+
+
+ul{
+ list-style-type: none;
+}
+
+body{
+	font-family: helvetica;
+}
+
+
+#header{
+margin: -6px 0px 28px 0px;
+height: 80px;
+background-color: #8C9C9A;
+color: white;
+display: block;
+}
+
+#login{
+  margin: 5px;
+}
+
+#signup{
+  margin: 5px;
+}
+
+
+
+#friendProfilePicture img{
+  width: 100px;
+}
+
+.loginBttn{
+  float: right;
+}
+
+.row {
+  width:200px;
+  height: 300px;
+  background-color: red;
+  margin: 4px;
+  display: inline-block;
+  position: relative;
+}
+
+#conversation{
+  display: block;
+  background-color: red;
+  justify-content: center;
+  
+}
