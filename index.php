@@ -6,19 +6,77 @@
        <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Montserrat: 400, 700" rel="stylesheet">
     <!-- cambie todas las tipos a helvetica por ahora, mepa que le vamos a dar una estetica un toque mas seria, asi q no tamos usando esas tipos-->
+
+
         <script type='text/javascript' src='script.js'></script>
-        
+        <?php include 'userauth.php' ?>
+        <?php session_start(); ?>
+
+
 
     </head>
 <body>
-    <div id="container">
+    <div id="loginFormContainer">
+      <div id="loginFormContent">
+        <div id="loginFormHeader">
+          <h2><?php echo $show ?></h2><span id="close" onclick="closeLogin()">X</span>
+        </div>
+
+        <div id="loginFormBody">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+            <input class="loginInput" type="text" name="username" placeholder="User name">
+            <input class="loginInput" type="password" name="password" placeholder="Password">
+            <p id="loginError"><?php echo $loginError; ?></p>
+            <input type="hidden" name="formChoice" value="login">
+            <center><input id="loginSubmit" type="submit" value="Log in"></center>
+          </form>
+        </div>
+
+        <div id="loginFormFooter">
+          <p>Click here for more info?</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="signupFormContainer">
+      <div id="signupFormContent">
+        <div id="signupFormHeader">
+          <h2><?php echo $show." ".$username." ".$password; ?></h2><span id="close" onclick="closeSignup()">X</span>
+        </div>
+
+        <div id="signupFormBody">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+            <input class="signupInput" type="text" name="username" placeholder="Username">
+            <p class="signuperror"><?php echo $usernameError; ?></p>
+            <input class="signupInput" type="text" name="email" placeholder="E-mail">
+            <p class="signuperror"><?php echo $emailError; ?></p>
+            <input class="signupInput" type="text" name="name" placeholder="Name">
+            <p class="signuperror"><?php echo $nameError; ?></p>
+            <input class="signupInput" type="text" name="lastname" placeholder="Last name">
+            <p class="signuperror"><?php echo $lastnameError; ?></p>
+            <input class="signupInput" id="signupPsw" type="password" name="password" placeholder="Password">
+            <input class="signupInput" id="signupPswRpt" type="password" name="passwordRepeat" placeholder="Repeat Password" onkeydown="setInterval(checkPswd, 300)">
+            <p class="signupError" id="paswError"><?php echo $passwordError; ?></p>
+            <input type="hidden" name="formChoice" value="signup">
+            <center><input id="signupSubmit" type="submit" value="Sign Up" disabled="true"></center>
+          </form>
+        </div>
+
+        <div id="signupFormFooter">
+          <a href="#">Click here for more info?</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="MainContainer">
       <div id="header">
         <div id="headerContainer">
           <div id="brandContainer"> <a href='index.html'><h1>Talk 2 Me</h1></a></div>
           <form action="./search.php" id="searchBar"><input type="text" name="searchKeyword" id="searchField" placeholder="search"></form>
           <div id="loginContainer">
-            <p class="bttn loginBttn" id="login">Log-in</p>
-            <p class="bttn loginBttn" id="signup">Sign-Up</p>
+            <p class="bttn loginBttn" id="login" onclick="openLogin()">Log-in</p>
+            <p class="bttn loginBttn" id="signup" onclick="openSignup()">Sign-Up</p>
           </div>
         </div>
       </div>
@@ -63,14 +121,16 @@
                 <p>Enter a word to search as a trigger for a conversation with me!</p>
 
                 <p>I will tell you about the term, according by what I understand by it :)</p>
-                <center> <div id="prompt_container">
+                <div id="prompt_container">
 
 
-<input id="questionField" type="text" name="question" onkeypress="isEnter()"> <!--el onsubmit no funciona, apretando enter no dispara la opcion, solo dandole clic al boton que esta afuera del form (agregue un botn adentro del form con las mismas propiedades y no funciona) -->
+                  <input id="questionField" type="text" name="question" onkeypress="isEnter()"> <!--el onsubmit no funciona, apretando enter no dispara la opcion, solo dandole clic al boton que esta afuera del form (agregue un botn adentro del form con las mismas propiedades y no funciona)
+                  Solano 08/011: ya le vamos a sacar la ficha de como hacerlo. Lo que estoy intentando es utilizar la funcion
+                  onkeypress y adentro de esa función usar key.code() para saber si la tecla que se apretó fue enter. 
+                  cualquier cosa pedime y te paso el link de donde saque la idea -->
+                  <button onclick="questions()">Submit</button>
 
-<button onclick="questions()">Submit</button>
-
-
+                </div>
               </div>
 
               <div class="relCon_section" id="relCon_alsoLike">

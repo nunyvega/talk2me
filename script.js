@@ -1,3 +1,31 @@
+function openLogin(){
+  document.getElementById("loginFormContainer").style="display:block";
+}
+function closeLogin(){
+  document.getElementById("loginFormContainer").style="display:none";
+}
+function openSignup(){
+  document.getElementById("signupFormContainer").style="display:block";
+}
+function closeSignup(){
+  document.getElementById("signupFormContainer").style="display:none";
+}
+function checkPswd(){
+  var psw = document.getElementById("signupPsw").value;
+  var pswR = document.getElementById("signupPswRpt").value;
+  document.getElementById("signupSubmit").disabled= true;
+  if (psw == pswR){
+    document.getElementById("paswError").innerHTML="";
+    document.getElementById("signupSubmit").disabled= false;
+  } else{
+    document.getElementById("paswError").innerHTML="The passwords don't match";
+  }
+
+
+}
+
+
+
 function linkcases(caseNumber){
   switch (caseNumber){
     case 1:
@@ -29,8 +57,22 @@ function linkcases(caseNumber){
       break;
   }
 }
+
+function isEnter(event){
+
+  var keyPressed = event.keyCode();
+  alert("hola");
+
+  if (keyPressed == 13) {
+    alert("inside the if");
+    questions(document.getElementById('questionField').value)  //cambié pregunta por questionField para que quede todo en el mismo idioma.
+    return false;                                              //lo puse en inglés por si alguien se dispone a ayudarnos en github
+  }
+}
+
+
 function questions(question){
-  var question = document.getElementById('pregunta').value
+  var question = document.getElementById('questionField').value
   switch (question){
     case "why":
       document.getElementById("videoPlayer").src="https://www.youtube.com/embed/YLGx5Pbcbuk"; //Ostera dormido
