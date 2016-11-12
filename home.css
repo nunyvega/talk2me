@@ -1,8 +1,31 @@
 
-
-ul{
- list-style-type: none;
+#container{
+  display: flex;
+  flex-direction: row;
+background-color: gray;
+flex-wrap: wrap;
+justify-content: center;
 }
+
+
+.row {
+  width:200px;
+  height: 300px;
+  background-color: red;
+  margin: 4px;
+  border-radius: 20px;
+
+}
+
+#main{
+  background-color: yellow;
+display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
 
 body{
 	font-family: helvetica;
@@ -11,10 +34,13 @@ body{
 
 #header{
 margin: -6px 0px 28px 0px;
+width: 800px;
 height: 80px;
 background-color: #8C9C9A;
 color: white;
-display: block;
+justify-content: space-between;
+
+
 }
 
 #login{
@@ -26,27 +52,12 @@ display: block;
 }
 
 
-
-#friendProfilePicture img{
+.friendProfilePicture img{
   width: 100px;
 }
 
-.loginBttn{
-  float: right;
-}
-
-.row {
-  width:200px;
-  height: 300px;
-  background-color: red;
-  margin: 4px;
-  display: inline-block;
-  position: relative;
-}
-
 #conversation{
-  display: block;
-  background-color: red;
   justify-content: center;
-  
+  background-color: blue;
+
 }
