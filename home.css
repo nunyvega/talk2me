@@ -4,60 +4,95 @@
   flex-direction: row;
 background-color: gray;
 flex-wrap: wrap;
-justify-content: center;
+justify-content: space-around;
+width: 90vw;
 }
 
-
-.row {
-  width:200px;
-  height: 300px;
+header{
+  display: flex;
   background-color: red;
-  margin: 4px;
-  border-radius: 20px;
+  margin: -5px 0px 0px 0px;
+  width: 90vw;
+  height: 80px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+header .brandContainer{
+  font-size: 30px;
+  color: white;
+  margin-left: 5px
+}
+
+#search{
+width: 350px;
+height: 20px;
+margin-top: 5px;
+}
+
+header #loginContainer{
+display: flex;
+flex-direction: row;
 
 }
 
-#main{
-  background-color: yellow;
-display:flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+#loginContainer .bttn{
+  margin: 6px;
+  background-color: blue;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  color: white;
+  display: flex;
+  font-size: 16px;
   justify-content: space-around;
 
-}
 
 
-body{
-	font-family: helvetica;
-}
-
-
-#header{
-margin: -6px 0px 28px 0px;
-width: 800px;
-height: 80px;
-background-color: #8C9C9A;
-color: white;
-justify-content: space-between;
-
-
-}
-
-#login{
-  margin: 5px;
-}
-
-#signup{
-  margin: 5px;
-}
-
-
-.friendProfilePicture img{
-  width: 100px;
 }
 
 #conversation{
-  justify-content: center;
-  background-color: blue;
+display: flex;
+width: 90vw;
+background-color: pink;
+justify-content: center;
+color: white;
+height: auto;
+
+}
+
+#content{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+background: green;
+width: 90vw;
+height: 550px;
+
+
+}
+
+.personas {
+  background-color:rgba(255, 255, 200, 1);
+  width: 200px;
+  height: 230px;
+  margin: auto;
+  border-radius: 30px;
+
+
+
+}
+
+footer{
+
+}
+
+#prototype{
+
+}
+
+#newLevel{
 
 }
