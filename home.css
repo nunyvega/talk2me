@@ -1,0 +1,113 @@
+
+#container{
+  display: flex;
+background-color: black;
+flex-wrap: wrap;
+justify-content: space-around;
+width: 100vw;
+}
+
+header{
+  display: flex;
+  background-color: white;
+  margin: -10px 0px 0px 0px;
+  width: 100vw;
+  height: 80px;
+  flex-wrap: wrap;
+  justify-content: space-around;;
+  flex-direction: row;
+  border: 1px solid gray;
+  padding: 10px
+}
+
+header .brandContainer{
+  font-size: 30px;
+  color: gray;
+
+}
+
+#search{
+width: 350px;
+height: 20px;
+margin-top: 5px;
+}
+
+header #loginContainer{
+display: flex;
+flex-direction: row;
+
+}
+
+#loginContainer .bttn{
+  margin: 6px;
+  background-color: blue;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  color: white;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-around;
+
+
+
+}
+
+#conversation{
+display: flex;
+width: 90vw;
+background-color: pink;
+justify-content: center;
+color: white;
+height: auto;
+
+}
+
+#content{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+background: green;
+width: 90vw;
+height: flex;
+padding: 10px, 0px, 10px, 0px;
+
+
+
+}
+
+.personas {
+  background-color:rgba(255, 255, 200, 1);
+  width: 220px;
+  height: 250px;
+  margin: 10px;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+footer{
+background-color: blue;
+width: 100vw;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+height: flex;
+
+}
+
+footer .brandContainer{
+font-size: 20px;
+
+}
+#prototype{
+  color: white;
+
+}
+
+#newLevel{
+color: red;
+}
