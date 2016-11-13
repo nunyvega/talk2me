@@ -1,29 +1,3 @@
-function openLogin(){
-  document.getElementById("loginFormContainer").style="display:block";
-}
-function closeLogin(){
-  document.getElementById("loginFormContainer").style="display:none";
-}
-function openSignup(){
-  document.getElementById("signupFormContainer").style="display:block";
-}
-function closeSignup(){
-  document.getElementById("signupFormContainer").style="display:none";
-}
-function checkPswd(){
-  var psw = document.getElementById("signupPsw").value;
-  var pswR = document.getElementById("signupPswRpt").value;
-  document.getElementById("signupSubmit").disabled= true;
-  if (psw == pswR){
-    document.getElementById("paswError").innerHTML="";
-    document.getElementById("signupSubmit").disabled= false;
-  } else{
-    document.getElementById("paswError").innerHTML="The passwords don't match";
-  }
-
-
-}
-
 
 
 function linkcases(caseNumber){

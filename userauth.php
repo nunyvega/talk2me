@@ -2,7 +2,6 @@
 
 //User authentification:
 
-
 //signup - definitions:      ---------------------------------------
 
 //MySql
@@ -34,11 +33,12 @@ $username = $email = $name = $lastname = $password = '';
 //Flow handle variables:
 
 $CompleteData = '';
+$loginStarted = '';
+$signupStarted = '';
 $signupReady = False;
 $loginReady = False;
 $uniqueUsername = True;
 $completeData = False;
-$show = '';
 
 //functions:
 
@@ -49,10 +49,12 @@ function test_input($data) {
 	return $data;
 }
 
+
 // Form handling: Signup -------------------------------------------------------------
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["formChoice"] == "signup"){  //check if the form to handle is a 
 																				//register or login form. true = reg
+	$signupStarted = True;
 	if (empty($_POST["username"])){
 		$usernameError = $fieldRequiredError;
 		$completeData = False;
@@ -76,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["formChoice"] == "signup"){  
 	} else {
 		$email = test_input($_POST["email"]);
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-			$emailError = $fieldRequiredError;
+			$emailError = "oops, the mail adress you provided doesn't seem to be a valid adress";
 			$completeData = False;
 		}
 	}
@@ -135,6 +137,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["formChoice"] == "signup"){  
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['formChoice'] == "login"){	//check if the form to handle is a 
 																				//register or login form. true = reg
+	$loginStarted = True;	
+
 	if (empty($_POST['username'])){
 		$usernameError = $fieldRequiredError;
 		$loginReady = False;
@@ -149,11 +153,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['formChoice'] == "login"){	//
 		$password = $_POST['password'];
 	}
 
-	mysqli_query($conn, 'SELECT UserID FROM users WHERE(username = "'.$username.'" AND password = "'.$password.'")');
-	$show = mysqli_affected_rows($conn);
-	if (mysqli_affected_rows($conn) == 1){
+	$userId = mysqli_query($conn, "SELECT UserID FROM users WHERE(username = '$username' AND password = '$password')");
+
+	if (mysqli_affected_rows($conn) == 1){  //If True : Succesfully logged in
+
 		$loginReady = True;
-			//Succesfully logged in
+		setcookie('logged', True);
+	
 
 	} else{
 		$loginError = "The user/password combination is incorrect. Please try again.";
