@@ -1,31 +1,40 @@
 
 #container{
   display: flex;
-  background-color: black;
   flex-wrap: wrap;
   justify-content: space-around;
+
   width: 100vw;
+
   font-family: helvetica;
+
+  background-color: #d9d9d9;
 }
 
 header{
   display: flex;
-  background-color: white;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;;
+
   margin: -10px 0px 0px 0px;
   width: 100vw;
   height: 80px;
-  flex-wrap: wrap;
-  justify-content: space-around;;
-  flex-direction: row;
-  border: 1px solid gray;
-  padding: 10px
+  padding: 10px;
+
+  border: 1px solid #d9d9d9;
+  background-color: white;
 }
 
 header .brandContainer{
+  height: 40px;
+  padding: 4px;
+
   font-size: 30px;
   color: white;
-  background: blue;
 
+  border-radius:10px;
+  background: #004d99;
 }
 
 #search{
@@ -35,34 +44,39 @@ header .brandContainer{
 }
 
 header #loginContainer{
-  display: flex;
+  display: inline-block;
   flex-direction: row;
 
 }
 
 #loginContainer .bttn{
-  margin: 6px;
-  background-color: blue;
-  border-radius: 10px;
-  width: 90px;
-  height: 30px;
-  color: white;
   display: flex;
-  font-size: 16px;
   justify-content: space-around;
 
+  margin: 6px;
+  width: 90px;
 
+  color: white;
+  font-size: 16px;
+  vertical-align: middle;
+
+  background-color: #004d99;
+  border-radius: 10px;
 
 }
 
 #conversation{
   display: flex;
-  width: 90vw;
-  background-color: white;
-  border: 1px solid gray;
   justify-content: center;
-  color: gray;
+
+  width: 100vw;
   height: auto;
+
+  font-family: monospace;
+  color: gray;
+
+  background-color: white;
+  border: 1px solid #d9d9d9;
 
 }
 
@@ -71,46 +85,59 @@ header #loginContainer{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  background: green;
-  width: 90vw;
+
+  width: 80vw;
   height: flex;
   padding: 10px, 0px, 10px, 0px;
+  margin-top: 12px;
 
+  background: white;
 
 
 }
 
 .personas {
-  background-color:rgba(255, 255, 200, 1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
   width: 220px;
   height: 250px;
   margin: 10px;
-  border-radius: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 
+  border-radius: 30px;
+  background-color:rgba(255, 255, 200, 1);
 }
 
 footer{
-  background-color: blue;
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: flex;
+
+  width: 100vw;
+  padding-top: 5px;
+
+
+  border-top: 1px solid #d9d9d9;
+  background-color: white;
 
 }
 
 footer .brandContainer{
-  font-size: 20px;
+  padding: 2px;
+
+  font-size: 15px;
+  color: white;
+
+  border-radius:5px;
+  background: #004d99;
 
 }
 #prototype{
-  color: white;
+  color: #808080;
 
 }
 
 #newLevel{
-  color: red;
+  color: #404040;
 }
