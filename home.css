@@ -1,10 +1,11 @@
 
 #container{
   display: flex;
-background-color: black;
-flex-wrap: wrap;
-justify-content: space-around;
-width: 100vw;
+  background-color: black;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100vw;
+  font-family: helvetica;
 }
 
 header{
@@ -22,19 +23,20 @@ header{
 
 header .brandContainer{
   font-size: 30px;
-  color: gray;
+  color: white;
+  background: blue;
 
 }
 
 #search{
-width: 350px;
-height: 20px;
-margin-top: 5px;
+  width: 350px;
+  height: 20px;
+  margin-top: 5px;
 }
 
 header #loginContainer{
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
 }
 
@@ -54,24 +56,25 @@ flex-direction: row;
 }
 
 #conversation{
-display: flex;
-width: 90vw;
-background-color: pink;
-justify-content: center;
-color: white;
-height: auto;
+  display: flex;
+  width: 90vw;
+  background-color: white;
+  border: 1px solid gray;
+  justify-content: center;
+  color: gray;
+  height: auto;
 
 }
 
 #content{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-around;
-background: green;
-width: 90vw;
-height: flex;
-padding: 10px, 0px, 10px, 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: green;
+  width: 90vw;
+  height: flex;
+  padding: 10px, 0px, 10px, 0px;
 
 
 
@@ -90,17 +93,17 @@ padding: 10px, 0px, 10px, 0px;
 }
 
 footer{
-background-color: blue;
-width: 100vw;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-height: flex;
+  background-color: blue;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: flex;
 
 }
 
 footer .brandContainer{
-font-size: 20px;
+  font-size: 20px;
 
 }
 #prototype{
@@ -109,5 +112,5 @@ font-size: 20px;
 }
 
 #newLevel{
-color: red;
+  color: red;
 }
