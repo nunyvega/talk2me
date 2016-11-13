@@ -1,3 +1,5 @@
+/* Todo se encuentra ordenado en base al orden de aparicion en el HTML */
+
 
 #container{
   display: flex;
@@ -36,7 +38,7 @@ header .brandContainer{
   font-size: 30px;
   color: white;
 
-  border-bottom-right-radius:10px;
+  border-bottom-right-radius:20px;
   background: #004d99;
 }
 
@@ -44,6 +46,11 @@ header .brandContainer{
   width: 350px;
   height: 20px;
   margin-top: 5px;
+
+  text-align: center;
+
+  border-top-left-radius: 20px;
+  border-bottom-right-radius:20px;
 }
 
 header #loginContainer{
@@ -69,8 +76,8 @@ header #loginContainer{
   vertical-align: middle;
 
   background-color: #004d99;
-  border-bottom-left-radius: 10px;
-/*  border-bottom-right-radius:  10px; */
+  border-bottom-right-radius: 10px;
+  /*  border-bottom-right-radius:  10px; */
 }
 
 #conversation{
@@ -99,6 +106,8 @@ header #loginContainer{
   margin-top: 12px;
   margin-bottom: 12px;
 
+  border-top-left-radius:50px;
+  border-bottom-right-radius:50px;
   background: white;
 
 
@@ -113,7 +122,8 @@ header #loginContainer{
   height: 250px;
   margin: 10px;
 
-  border-radius: 30px;
+  border-top-left-radius:50px;
+  border-bottom-right-radius:50px;
   background-color:rgba(255, 255, 200, 1);
 }
 
@@ -133,38 +143,31 @@ footer{
 }
 
 .footerLine{
-  display: flex;
+  display:inline-flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 
 }
 
+
 #firstLine{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;;
+  justify-content: center;
+  text-align: center;
 
   margin: 4px 0px 4px 0px;
 
 }
 
 #secondLine{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;;
+  justify-content: space-around;
 
+  width: 80vw;
   margin: 4px 0px 1px 0px;
 }
 
 
-footer .brandContainer{
-  padding: 2px;
-
-  font-size: 15px;
-  color: white;
-
-  border-radius:5px;
-  background: #004d99;
 
 }
 #prototype{
@@ -174,4 +177,16 @@ footer .brandContainer{
 
 #newLevel{
   color: #404040;
+}
+
+#money{
+  color: green;
+}
+
+#work{
+  color: #004d99;
+}
+
+#contact{
+  color: orange;
 }
