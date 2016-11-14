@@ -2,15 +2,15 @@
 <html>
     <head>
       <title> Talk2Me</title>
-      <link href="style.css" type="text/css" rel="stylesheet"/>
-      <link href="header.css" type="text/css" rel="stylesheet"/>
+      <link href="./css/style.css" type="text/css" rel="stylesheet"/>
+      <link href="./css/header.css" type="text/css" rel="stylesheet"/>
 
       <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Montserrat: 400, 700" rel="stylesheet">
         <!-- cambie todas las tipos a helvetica por ahora, mepa que le vamos a dar una estetica un toque mas seria, 
         asi q no tamos usando esas tipos-->
       <script type='text/javascript' src='script.js'></script>
-      <script src="header.js"></script>
+      <script src="./header.js"></script>
       <?php include 'userauth.php' ?>
       <?php session_start(); ?>
 
@@ -115,11 +115,11 @@
           <?php if (isset($_COOKIE['logged']) or $loginReady == True){ ?>            
             <div class="row" id="headerProfile">
               <div id="dropDownMenu">
-                <img src="arrow_down.png" id="arrowDown" onclick="openProfileMenu()">
+                <img src="./images/icons/arrow_down.png" id="arrowDown" onclick="openProfileMenu()">
                 <ul id="dropDownContent">
-                  <li><img src="edit_profile.png"><p class="dropDownText">Edit profile</p></li>
-                  <li><img src="upload_video.png"><p class="dropDownText">Upload Video</p></li>
-                  <li><img src="log_out.png"><a class="dropDownText" href="./logout.php">log out</a></li>
+                  <li><img src="./images/icons/edit_profile.png"><a class="dropDownText" href="./userprofile.php">My profile</a></li>
+                  <li><img src="./images/icons/upload_video.png"><a class="dropDownText" href="./uploadvideo.php">Upload Video</a></li>
+                  <li><img src="./images/icons/log_out.png"><a class="dropDownText" href="./logout.php">log out</a></li>
                 </ul>
               </div>
               <p id="headerUsername"><?php echo "Solano Palacio" ?></p>

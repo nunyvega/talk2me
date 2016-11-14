@@ -151,6 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['formChoice'] == "login"){	//
 		$loginReady = False;
 	} else {
 		$password = $_POST['password'];
+
 	}
 
 	$userId = mysqli_query($conn, "SELECT UserID FROM users WHERE(username = '$username' AND password = '$password')");
@@ -159,6 +160,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['formChoice'] == "login"){	//
 
 		$loginReady = True;
 		setcookie('logged', True);
+		setcookie('username', $username);
+		setcookie('userid', '$userid');
 	
 
 	} else{
