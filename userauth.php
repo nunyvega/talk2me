@@ -4,20 +4,7 @@
 
 //signup - definitions:      ---------------------------------------
 
-//MySql
-$dbhost = "127.0.0.1";
-$dbname = "t2m";
-$dbuser = "root";
-$dbpass = "password";
-$dbtable = "users";
-
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-if (!$conn) {
-	die("connection failed:" . mysqli_connect_error());
-}
-
-$sql = '';
+include ("./dbconnect.php");
 
 
 // Errors:
@@ -25,10 +12,14 @@ $sql = '';
 $loginError = $usernameError = $emailError = $nameError = $lastnameError = $passwordError = '';
 $fieldRequiredError = "This field is necesary to complete the registration";
 
+//config variables:
+
+$defaultPicturePath = "./images/defaultProfilePicture.jpg";
+$defaultUserDescription = "The default user description message has to be written in this variable";
 
 //Variables:
 
-$username = $email = $name = $lastname = $password = '';
+$username = $email = $name = $lastname = $password = $profileLink = '';
 
 //Flow handle variables:
 
@@ -39,6 +30,7 @@ $signupReady = False;
 $loginReady = False;
 $uniqueUsername = True;
 $completeData = False;
+$show = '';
 
 //functions:
 
@@ -122,12 +114,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["formChoice"] == "signup"){  
 		$completeData = True;
 	}
 	if ($completeData == True && $uniqueUsername == True){
+
 		$signupReady = True;
 
+		$username = mysqli_real_escape_string($conn, $username);
+		$name = mysqli_real_escape_string($conn, $name);
+		$lastname = mysqli_real_escape_string($conn, $lastname);
+		$email = mysqli_real_escape_string($conn, $email);
+		$password = mysqli_real_escape_string($conn, $password);
+
+		//Create user in user database table
 		$sql = 'INSERT INTO users (username, name, lastname, email, password)
 				VALUES ("'.$username.'", "'.$name.'", "'.$lastname.'", "'.$email.'", "'.$password.'") ';
 
 		mysqli_query($conn, $sql);
+
+		// Get the user id:
+		$sql = 'SELECT UserID FROM users WHERE (username = "'.$username.'")';
+		$userid = mysqli_query($conn, $sql);
+		$userid = mysqli_fetch_assoc($userid);
+		$userid = $userid["UserID"];
+
+		//create user folder (useridusername; example: 4431solanop) and create subfolders for profile pictures
+		//and video uploads
+
+		mkdir("./users/".$userid.$username."/profilepics", 0777, true);
+		mkdir("./users/".$userid.$username."/uploads", 0777, true);
+
+		//User profile link:
+
+		$profileLink = "./index.php?u=".$userid ;
+
+		//create user profile in profiles database table
+
+		$sql = 'INSERT INTO profiles (UserID, username, picturepath,
+										 description, profilelink)
+			VALUES ("'.$userid.'", "'.$username.'", "'.$defaultPicturePath.'",
+					"'.$defaultUserDescription.'","'.$profileLink.'")';
+
+		$result = mysqli_query($conn, $sql);
+
+
+
+		mysqli_close($conn);
+
 	}
 
 }
@@ -154,14 +184,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['formChoice'] == "login"){	//
 
 	}
 
-	$userId = mysqli_query($conn, "SELECT UserID FROM users WHERE(username = '$username' AND password = '$password')");
+	$result = mysqli_query($conn, "SELECT UserID, name, lastname FROM users 
+									WHERE(username = '$username' AND password = '$password')");
+	
+
+
 
 	if (mysqli_affected_rows($conn) == 1){  //If True : Succesfully logged in
 
 		$loginReady = True;
+
+	//Get user data:
+
+		$row = mysqli_fetch_row($result);
+		$userid = $row[0];
+		$name = $row[1];
+		$lastname = $row[2];
+
+	//real_escape_string the variables for the sql:
+
+		$userid = mysqli_real_escape_string($conn, $userid);
+		$name = mysqli_real_escape_string($conn, $name);
+		$lastname = mysqli_real_escape_string($conn, $lastname);
+
+	//get profile picture and profile paths:
+
+
+		$sql = "SELECT picturepath, profilelink, description, country,  language FROM profiles WHERE (username = '$username')";
+
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_row($result);
+		$picturePath = $row[0];
+		$profileLink = $row[1];
+		$userDescription = $row[2];
+		$country = $row[3];
+		$spokenLanguage = $row[4];
+
+		mysqli_real_escape_string($conn, $picturePath);
+		mysqli_real_escape_string($conn, $profileLink);
+		mysqli_real_escape_string($conn, $userDescription);
+		mysqli_real_escape_string($conn, $country);
+		mysqli_real_escape_string($conn, $spokenLanguage);
+
+	//Set cookies:
+
 		setcookie('logged', True);
 		setcookie('username', $username);
-		setcookie('userid', '$userid');
+		setcookie('userid', $userid);
+		setcookie('name', $name);
+		setcookie('lastname', $lastname);
+		setcookie('picturePath', $picturePath);
+		setcookie('profileLink', $profileLink);
+		setcookie('userDescription', $userDescription);
+		setcookie('country', $country);
+		setcookie('spokenLanguage', $spokenLanguage);
+
+
 	
 
 	} else{
