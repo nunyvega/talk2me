@@ -2,17 +2,28 @@
 <html>
     <head>
       <title> Talk2Me</title>
+
+<!-- CSS includes -->
+
       <link href="./css/style.css" type="text/css" rel="stylesheet"/>
       <link href="./css/header.css" type="text/css" rel="stylesheet"/>
 
+
+<!-- CDN includes    -->
+
       <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Montserrat: 400, 700" rel="stylesheet">
-        <!-- cambie todas las tipos a helvetica por ahora, mepa que le vamos a dar una estetica un toque mas seria, 
-        asi q no tamos usando esas tipos-->
+
+<!-- Javascript includes -->
+
       <script type='text/javascript' src='script.js'></script>
       <script src="./header.js"></script>
-      <?php include 'userauth.php' ?>
-      <?php session_start(); ?>
+
+<!-- PHP includes -->
+
+      <?php include 'userauth.php'; ?>
+      <?php include 'getcookies.php'; ?>
+
 
     </head>
     <!-- open login or regsiter if there's a login or registration in progress.--> 
@@ -20,7 +31,7 @@
       <?php if($signupStarted == True){ echo 'onload="openSignup()"';}?> 
       >
 
-    <!-- Login form dialog --> 
+    <!-- Login form dialog - hidden by default --> 
 
     <div id="loginFormContainer">
       <div id="loginFormContent">
@@ -56,7 +67,7 @@
       </div>
     </div>
 
-    <!-- Signup form dialog -->
+    <!-- Signup form dialog - hidden by default -->
 
     <div id="signupFormContainer">
       <div id="signupFormContent">
@@ -122,8 +133,8 @@
                   <li><img src="./images/icons/log_out.png"><a class="dropDownText" href="./logout.php">log out</a></li>
                 </ul>
               </div>
-              <p id="headerUsername"><?php echo "Solano Palacio" ?></p>
-              <img src="solanoprofile.jpg">
+              <p id="headerUsername"><?php echo $username; ?></p>
+              <img src="<?php echo $picturePath; ?>">
 
 
             </div>
