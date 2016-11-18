@@ -1,0 +1,13 @@
+.row img{
+	width:150px;
+	height:150px;
+}
+form input {
+	display: block;
+	margin-top: 35px;
+	border: 1px solid black;
+}
+
+#profilePicInput {
+	width: 450px;
+}
