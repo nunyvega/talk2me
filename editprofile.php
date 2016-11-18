@@ -3,9 +3,9 @@
 <HTML>
 <head>
 <link rel="stylesheet" type="text/css" href="./CSS/userprofile.css">
-<?php include "uploadpicture.php"; ?>
-<?php include "getcookies.php"; ?>
-<?php include "changeuserinfo.php"; ?>
+<?php include "./php_includes/uploadpicture.php"; ?>
+<?php include "./php_includes/getcookies.php"; ?>
+<?php include "./php_includes/changeuserinfo.php"; ?>
 
 </head>
 
