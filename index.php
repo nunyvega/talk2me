@@ -51,7 +51,7 @@
               <div id="dropDownMenu">
                 <img src="./images/icons/arrow_down.png" id="arrowDown" onclick="openProfileMenu()">
                 <ul id="dropDownContent">
-                  <li><img src="./images/icons/edit_profile.png"><a class="dropDownText" href="./userprofile.php">My profile</a></li>
+                  <li><img src="./images/icons/edit_profile.png"><a class="dropDownText" href="./editprofile.php">My profile</a></li>
                   <li><img src="./images/icons/upload_video.png"><a class="dropDownText" href="./uploadvideo.php">Upload Video</a></li>
                   <li><img src="./images/icons/log_out.png"><a class="dropDownText" href="./logout.php">log out</a></li>
                 </ul>

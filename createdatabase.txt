@@ -1,0 +1,419 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE `friends` (
+  `linkid` int(11) NOT NULL,
+  `followerUsername` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `followerUserID` int(32) NOT NULL,
+  `followedUsername` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `followedUserID` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `friends` (`linkid`, `followerUsername`, `followerUserID`, `followedUsername`, `followedUserID`) VALUES
+(1, 'escarpino', 54, 'escarpino', 53),
+(2, 'escarpino', 54, 'escapino', 53),
+(3, 'escarpino', 54, 'escapino', 53),
+(4, 'escarpino', 54, 'escapino', 53),
+(5, 'escarpino', 54, 'mancubino', 55),
+(6, 'escarpino', 54, 'aluino', 56),
+(7, 'escarpino', 54, 'ebuino', 57),
+(8, 'escarpino', 54, 'cabuino', 58),
+(9, 'escarpino', 54, 'paduino', 59),
+(10, 'escarpino', 54, 'mabuino', 60),
+(11, 'aluino', 56, 'ebuino', 57),
+(12, 'aluino', 56, 'cabuino', 58),
+(13, 'aluino', 56, 'paduino', 59),
+(14, 'aluino', 56, 'mabuino', 60),
+(15, 'aluino', 56, 'asuino', 61),
+(16, 'aluino', 56, 'cotuino', 62),
+(17, 'aluino', 56, 'astopino', 63),
+(18, 'aluino', 56, 'colomino', 64),
+(19, 'aluino', 56, 'osconino', 65),
+(20, 'aluino', 56, 'artovino', 66),
+(21, 'aluino', 56, 'tosudino', 67),
+(22, 'aluino', 56, 'ostrocino', 68),
+(23, 'aluino', 56, 'boncomino', 69),
+(24, 'aluino', 56, 'coscluino', 70),
+(25, 'aluino', 56, 'cascluino', 71),
+(26, 'ebuino', 57, 'aluino', 56),
+(27, 'ebuino', 57, 'cabuino', 58),
+(28, 'ebuino', 57, 'paduino', 59),
+(29, 'ebuino', 57, 'mabuino', 60),
+(30, 'ebuino', 57, 'asuino', 61),
+(31, 'ebuino', 57, 'cotuino', 62),
+(32, 'ebuino', 57, 'astopino', 63),
+(33, 'ebuino', 57, 'colomino', 64),
+(34, 'ebuino', 57, 'osconino', 65),
+(35, 'ebuino', 57, 'artovino', 66),
+(36, 'ebuino', 57, 'tosudino', 67),
+(37, 'ebuino', 57, 'ostrocino', 68),
+(38, 'ebuino', 57, 'boncomino', 69),
+(39, 'ebuino', 57, 'coscluino', 70),
+(40, 'ebuino', 57, 'cascluino', 71),
+(41, 'cabuino', 58, 'aluino', 56),
+(42, 'cabuino', 58, 'ebuino', 57),
+(43, 'cabuino', 58, 'paduino', 59),
+(44, 'cabuino', 58, 'mabuino', 60),
+(45, 'cabuino', 58, 'asuino', 61),
+(46, 'cabuino', 58, 'cotuino', 62),
+(47, 'cabuino', 58, 'astopino', 63),
+(48, 'cabuino', 58, 'colomino', 64),
+(49, 'cabuino', 58, 'osconino', 65),
+(50, 'cabuino', 58, 'artovino', 66),
+(51, 'cabuino', 58, 'tosudino', 67),
+(52, 'cabuino', 58, 'ostrocino', 68),
+(53, 'cabuino', 58, 'boncomino', 69),
+(54, 'cabuino', 58, 'coscluino', 70),
+(55, 'cabuino', 58, 'cascluino', 71),
+(56, 'paduino', 59, 'aluino', 56),
+(57, 'paduino', 59, 'ebuino', 57),
+(58, 'paduino', 59, 'cabuino', 58),
+(59, 'paduino', 59, 'mabuino', 60),
+(60, 'paduino', 59, 'asuino', 61),
+(61, 'paduino', 59, 'cotuino', 62),
+(62, 'paduino', 59, 'astopino', 63),
+(63, 'paduino', 59, 'colomino', 64),
+(64, 'paduino', 59, 'osconino', 65),
+(65, 'paduino', 59, 'artovino', 66),
+(66, 'paduino', 59, 'tosudino', 67),
+(67, 'paduino', 59, 'ostrocino', 68),
+(68, 'paduino', 59, 'boncomino', 69),
+(69, 'paduino', 59, 'coscluino', 70),
+(70, 'paduino', 59, 'cascluino', 71),
+(71, 'mabuino', 60, 'aluino', 56),
+(72, 'mabuino', 60, 'ebuino', 57),
+(73, 'mabuino', 60, 'cabuino', 58),
+(74, 'mabuino', 60, 'paduino', 59),
+(75, 'mabuino', 60, 'asuino', 61),
+(76, 'mabuino', 60, 'cotuino', 62),
+(77, 'mabuino', 60, 'astopino', 63),
+(78, 'mabuino', 60, 'colomino', 64),
+(79, 'mabuino', 60, 'osconino', 65),
+(80, 'mabuino', 60, 'artovino', 66),
+(81, 'mabuino', 60, 'tosudino', 67),
+(82, 'mabuino', 60, 'ostrocino', 68),
+(83, 'mabuino', 60, 'boncomino', 69),
+(84, 'mabuino', 60, 'coscluino', 70),
+(85, 'mabuino', 60, 'cascluino', 71),
+(86, 'asuino', 61, 'aluino', 56),
+(87, 'asuino', 61, 'ebuino', 57),
+(88, 'asuino', 61, 'cabuino', 58),
+(89, 'asuino', 61, 'paduino', 59),
+(90, 'asuino', 61, 'mabuino', 60),
+(91, 'asuino', 61, 'cotuino', 62),
+(92, 'asuino', 61, 'astopino', 63),
+(93, 'asuino', 61, 'colomino', 64),
+(94, 'asuino', 61, 'osconino', 65),
+(95, 'asuino', 61, 'artovino', 66),
+(96, 'asuino', 61, 'tosudino', 67),
+(97, 'asuino', 61, 'ostrocino', 68),
+(98, 'asuino', 61, 'boncomino', 69),
+(99, 'asuino', 61, 'coscluino', 70),
+(100, 'asuino', 61, 'cascluino', 71),
+(101, 'cotuino', 62, 'aluino', 56),
+(102, 'cotuino', 62, 'ebuino', 57),
+(103, 'cotuino', 62, 'cabuino', 58),
+(104, 'cotuino', 62, 'paduino', 59),
+(105, 'cotuino', 62, 'mabuino', 60),
+(106, 'cotuino', 62, 'asuino', 61),
+(107, 'cotuino', 62, 'astopino', 63),
+(108, 'cotuino', 62, 'colomino', 64),
+(109, 'cotuino', 62, 'osconino', 65),
+(110, 'cotuino', 62, 'artovino', 66),
+(111, 'cotuino', 62, 'tosudino', 67),
+(112, 'cotuino', 62, 'ostrocino', 68),
+(113, 'cotuino', 62, 'boncomino', 69),
+(114, 'cotuino', 62, 'coscluino', 70),
+(115, 'cotuino', 62, 'cascluino', 71),
+(116, 'astopino', 63, 'aluino', 56),
+(117, 'astopino', 63, 'ebuino', 57),
+(118, 'astopino', 63, 'cabuino', 58),
+(119, 'astopino', 63, 'paduino', 59),
+(120, 'astopino', 63, 'mabuino', 60),
+(121, 'astopino', 63, 'asuino', 61),
+(122, 'astopino', 63, 'cotuino', 62),
+(123, 'astopino', 63, 'colomino', 64),
+(124, 'astopino', 63, 'osconino', 65),
+(125, 'astopino', 63, 'artovino', 66),
+(126, 'astopino', 63, 'tosudino', 67),
+(127, 'astopino', 63, 'ostrocino', 68),
+(128, 'astopino', 63, 'boncomino', 69),
+(129, 'astopino', 63, 'coscluino', 70),
+(130, 'astopino', 63, 'cascluino', 71),
+(131, 'colomino', 64, 'aluino', 56),
+(132, 'colomino', 64, 'ebuino', 57),
+(133, 'colomino', 64, 'cabuino', 58),
+(134, 'colomino', 64, 'paduino', 59),
+(135, 'colomino', 64, 'mabuino', 60),
+(136, 'colomino', 64, 'asuino', 61),
+(137, 'colomino', 64, 'cotuino', 62),
+(138, 'colomino', 64, 'astopino', 63),
+(139, 'colomino', 64, 'osconino', 65),
+(140, 'colomino', 64, 'artovino', 66),
+(141, 'colomino', 64, 'tosudino', 67),
+(142, 'colomino', 64, 'ostrocino', 68),
+(143, 'colomino', 64, 'boncomino', 69),
+(144, 'colomino', 64, 'coscluino', 70),
+(145, 'colomino', 64, 'cascluino', 71),
+(146, 'osconino', 65, 'aluino', 56),
+(147, 'osconino', 65, 'ebuino', 57),
+(148, 'osconino', 65, 'cabuino', 58),
+(149, 'osconino', 65, 'paduino', 59),
+(150, 'osconino', 65, 'mabuino', 60),
+(151, 'osconino', 65, 'asuino', 61),
+(152, 'osconino', 65, 'cotuino', 62),
+(153, 'osconino', 65, 'astopino', 63),
+(154, 'osconino', 65, 'colomino', 64),
+(155, 'osconino', 65, 'artovino', 66),
+(156, 'osconino', 65, 'tosudino', 67),
+(157, 'osconino', 65, 'ostrocino', 68),
+(158, 'osconino', 65, 'boncomino', 69),
+(159, 'osconino', 65, 'coscluino', 70),
+(160, 'osconino', 65, 'cascluino', 71),
+(161, 'artovino', 66, 'aluino', 56),
+(162, 'artovino', 66, 'ebuino', 57),
+(163, 'artovino', 66, 'cabuino', 58),
+(164, 'artovino', 66, 'paduino', 59),
+(165, 'artovino', 66, 'mabuino', 60),
+(166, 'artovino', 66, 'asuino', 61),
+(167, 'artovino', 66, 'cotuino', 62),
+(168, 'artovino', 66, 'astopino', 63),
+(169, 'artovino', 66, 'colomino', 64),
+(170, 'artovino', 66, 'osconino', 65),
+(171, 'artovino', 66, 'tosudino', 67),
+(172, 'artovino', 66, 'ostrocino', 68),
+(173, 'artovino', 66, 'boncomino', 69),
+(174, 'artovino', 66, 'coscluino', 70),
+(175, 'artovino', 66, 'cascluino', 71),
+(176, 'tosudino', 67, 'aluino', 56),
+(177, 'tosudino', 67, 'ebuino', 57),
+(178, 'tosudino', 67, 'cabuino', 58),
+(179, 'tosudino', 67, 'paduino', 59),
+(180, 'tosudino', 67, 'mabuino', 60),
+(181, 'tosudino', 67, 'asuino', 61),
+(182, 'tosudino', 67, 'cotuino', 62),
+(183, 'tosudino', 67, 'astopino', 63),
+(184, 'tosudino', 67, 'colomino', 64),
+(185, 'tosudino', 67, 'osconino', 65),
+(186, 'tosudino', 67, 'artovino', 66),
+(187, 'tosudino', 67, 'ostrocino', 68),
+(188, 'tosudino', 67, 'boncomino', 69),
+(189, 'tosudino', 67, 'coscluino', 70),
+(190, 'tosudino', 67, 'cascluino', 71),
+(191, 'ostrocino', 68, 'aluino', 56),
+(192, 'ostrocino', 68, 'ebuino', 57),
+(193, 'ostrocino', 68, 'cabuino', 58),
+(194, 'ostrocino', 68, 'paduino', 59),
+(195, 'ostrocino', 68, 'mabuino', 60),
+(196, 'ostrocino', 68, 'asuino', 61),
+(197, 'ostrocino', 68, 'cotuino', 62),
+(198, 'ostrocino', 68, 'astopino', 63),
+(199, 'ostrocino', 68, 'colomino', 64),
+(200, 'ostrocino', 68, 'osconino', 65),
+(201, 'ostrocino', 68, 'artovino', 66),
+(202, 'ostrocino', 68, 'tosudino', 67),
+(203, 'ostrocino', 68, 'boncomino', 69),
+(204, 'ostrocino', 68, 'coscluino', 70),
+(205, 'ostrocino', 68, 'cascluino', 71),
+(206, 'boncomino', 69, 'aluino', 56),
+(207, 'boncomino', 69, 'ebuino', 57),
+(208, 'boncomino', 69, 'cabuino', 58),
+(209, 'boncomino', 69, 'paduino', 59),
+(210, 'boncomino', 69, 'mabuino', 60),
+(211, 'boncomino', 69, 'asuino', 61),
+(212, 'boncomino', 69, 'cotuino', 62),
+(213, 'boncomino', 69, 'astopino', 63),
+(214, 'boncomino', 69, 'colomino', 64),
+(215, 'boncomino', 69, 'osconino', 65),
+(216, 'boncomino', 69, 'artovino', 66),
+(217, 'boncomino', 69, 'tosudino', 67),
+(218, 'boncomino', 69, 'ostrocino', 68),
+(219, 'boncomino', 69, 'coscluino', 70),
+(220, 'boncomino', 69, 'cascluino', 71),
+(221, 'coscluino', 70, 'aluino', 56),
+(222, 'coscluino', 70, 'ebuino', 57),
+(223, 'coscluino', 70, 'cabuino', 58),
+(224, 'coscluino', 70, 'paduino', 59),
+(225, 'coscluino', 70, 'mabuino', 60),
+(226, 'coscluino', 70, 'asuino', 61),
+(227, 'coscluino', 70, 'cotuino', 62),
+(228, 'coscluino', 70, 'astopino', 63),
+(229, 'coscluino', 70, 'colomino', 64),
+(230, 'coscluino', 70, 'osconino', 65),
+(231, 'coscluino', 70, 'artovino', 66),
+(232, 'coscluino', 70, 'tosudino', 67),
+(233, 'coscluino', 70, 'ostrocino', 68),
+(234, 'coscluino', 70, 'boncomino', 69),
+(235, 'coscluino', 70, 'cascluino', 71),
+(236, 'cascluino', 71, 'aluino', 56),
+(237, 'cascluino', 71, 'ebuino', 57),
+(238, 'cascluino', 71, 'cabuino', 58),
+(239, 'cascluino', 71, 'paduino', 59),
+(240, 'cascluino', 71, 'mabuino', 60),
+(241, 'cascluino', 71, 'asuino', 61),
+(242, 'cascluino', 71, 'cotuino', 62),
+(243, 'cascluino', 71, 'astopino', 63),
+(244, 'cascluino', 71, 'colomino', 64),
+(245, 'cascluino', 71, 'osconino', 65),
+(246, 'cascluino', 71, 'artovino', 66),
+(247, 'cascluino', 71, 'tosudino', 67),
+(248, 'cascluino', 71, 'ostrocino', 68),
+(249, 'cascluino', 71, 'boncomino', 69),
+(250, 'cascluino', 71, 'coscluino', 70);
+
+CREATE TABLE `posts` (
+  `postid` int(32) NOT NULL,
+  `link` varchar(130) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `place` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `isanswer` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `profiles` (
+  `profileid` int(32) NOT NULL,
+  `username` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `picturepath` varchar(130) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `country` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `language` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `profilelink` varchar(160) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `profiles` (`profileid`, `username`, `picturepath`, `description`, `country`, `language`, `profilelink`) VALUES
+(1, 'pereno', './images/defaultProfilePicture.png', 'The default user description message has to be written in this variable', '', '', './index.php?u=47'),
+(2, 'asiduino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', '', '', './index.php?u=48'),
+(3, 'erruino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', '', '', './index.php?u=49'),
+(4, 'excluino', './users/50excluino/profilepics/excluino20161116128.jpg', 'The default user description message has to be written in this variable', '', '', './index.php?u=50'),
+(5, 'mambuino', './users/51mambuino/profilepics/mambuino2016111620.jpg', 'The default user description message has to be written in this variable', '', '', './index.php?u=51'),
+(6, 'acidulino', './users/52acidulino/profilepics/acidulino20161116422.jpg', 'pelops', '', '', './index.php?u=52'),
+(7, 'escarpino', './images/defaultProfilePicture.jpg', 'I can write a user description in this user and it will appear when I load his/her profile', 'Not set', 'Not set', './index.php?u=54'),
+(8, 'mancubino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=55'),
+(9, 'aluino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=56'),
+(10, 'ebuino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=57'),
+(11, 'cabuino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=58'),
+(12, 'paduino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=59'),
+(13, 'mabuino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=60'),
+(14, 'asuino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=61'),
+(15, 'cotuino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=62'),
+(16, 'astopino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=63'),
+(17, 'colomino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=64'),
+(18, 'osconino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=65'),
+(19, 'artovino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=66'),
+(20, 'tosudino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=67'),
+(21, 'ostrocino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=68'),
+(22, 'boncomino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=69'),
+(23, 'coscluino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=70'),
+(24, 'cascluino', './images/defaultProfilePicture.jpg', 'The default user description message has to be written in this variable', 'Not set', 'Not set', './index.php?u=71');
+
+CREATE TABLE `users` (
+  `UserID` int(6) NOT NULL,
+  `username` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(42) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `lastname` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `Signup Date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `users` (`UserID`, `username`, `Email`, `name`, `lastname`, `password`, `Signup Date`) VALUES
+(53, 'escapino', 'solanoepalacio@gmail.com', 's', 's', 's', '2016-11-16 14:04:47'),
+(54, 'escarpino', 'solanoepalacio@gmail.com', 's', 's', 's', '2016-11-16 14:09:39'),
+(55, 'mancubino', 'solanoepalacio@gmail.com', 'Mancubi', 'Spino', 's', '2016-11-16 20:10:15'),
+(56, 'aluino', 'aluino@gmail.com', 'Alvaro', 'Beduino', 's', '2016-11-17 15:36:05'),
+(57, 'ebuino', 'ebuino@gmail.com', 'Eustaquio', 'Busantino', 's', '2016-11-17 15:36:05'),
+(58, 'cabuino', 'cabuino@gmail.com', 'Carlos', 'Bursino', 's', '2016-11-17 15:36:05'),
+(59, 'paduino', 'paduino@gmail.com', 'Palabro', 'Dustino', 's', '2016-11-17 15:36:05'),
+(60, 'mabuino', 'mabuino@gmail.com', 'Marla', 'Ostrencis', 's', '2016-11-17 15:36:05'),
+(61, 'asuino', 'asuino@gmail.com', 'Ascarju', 'Marjarku', 's', '2016-11-17 15:36:05'),
+(62, 'cotuino', 'cotuino@gmail.com', 'Inaniel', 'Ferriel', 's', '2016-11-17 15:36:05'),
+(63, 'astopino', 'astopino@gmail.com', 'MarkoBiff', 'Sniff Sniff', 's', '2016-11-17 15:36:05'),
+(64, 'colomino', 'colomino@gmail.com', 'Costromen', 'Markoben', 's', '2016-11-17 15:36:05'),
+(65, 'osconino', 'osconino@gmail.com', 'Zen', ', men!', 's', '2016-11-17 15:36:05'),
+(66, 'artovino', 'artovino@gmail.com', 'Deskes', 'Asthafs', 's', '2016-11-17 15:36:05'),
+(67, 'tosudino', 'tosudino@gmail.com', 'Arkuibs', 'Tregar', 's', '2016-11-17 15:36:05'),
+(68, 'ostrocino', 'ostrocino@gmail.com', 'Berkenteemeth', 'Elgorder', 's', '2016-11-17 15:36:05'),
+(69, 'boncomino', 'boncomino@gmail.com', 'Lujembunsh', 'Mastorf', 's', '2016-11-17 15:36:05'),
+(70, 'coscluino', 'coscluino@gmail.com', 'Markoviris', 'Astrabul', 's', '2016-11-17 15:36:05'),
+(71, 'cascluino', 'cascluino@gmail.com', 'Merjensteres', 'Esteferestis', 's', '2016-11-17 15:36:05');
+
+CREATE TABLE `_crowdtags` (
+  `crowdtagid` int(32) NOT NULL,
+  `tagid` int(32) NOT NULL,
+  `postid` int(32) NOT NULL,
+  `taggerid` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `_ownertags` (
+  `ownertagid` int(32) NOT NULL,
+  `tagid` int(32) NOT NULL,
+  `postid` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `_questions` (
+  `questionid` int(32) NOT NULL,
+  `questiontoid` int(32) NOT NULL,
+  `questionfromid` int(32) NOT NULL,
+  `question` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `_questionvote` (
+  `voteid` int(32) NOT NULL,
+  `questionid` int(32) NOT NULL,
+  `voterid` int(32) NOT NULL,
+  `vote` varchar(4) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'up'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `_tags` (
+  `tagid` int(32) NOT NULL,
+  `tagname` varchar(64) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+ALTER TABLE `friends`
+  ADD PRIMARY KEY (`linkid`);
+
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`postid`);
+
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`profileid`);
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`UserID`);
+
+ALTER TABLE `_crowdtags`
+  ADD PRIMARY KEY (`crowdtagid`);
+
+ALTER TABLE `_ownertags`
+  ADD PRIMARY KEY (`ownertagid`);
+
+ALTER TABLE `_questions`
+  ADD PRIMARY KEY (`questionid`);
+
+ALTER TABLE `_questionvote`
+  ADD PRIMARY KEY (`voteid`);
+
+ALTER TABLE `_tags`
+  ADD PRIMARY KEY (`tagid`);
+
+
+ALTER TABLE `friends`
+  MODIFY `linkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+ALTER TABLE `posts`
+  MODIFY `postid` int(32) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `profiles`
+  MODIFY `profileid` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+ALTER TABLE `users`
+  MODIFY `UserID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+ALTER TABLE `_crowdtags`
+  MODIFY `crowdtagid` int(32) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `_ownertags`
+  MODIFY `ownertagid` int(32) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `_questions`
+  MODIFY `questionid` int(32) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `_questionvote`
+  MODIFY `voteid` int(32) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `_tags`
+  MODIFY `tagid` int(32) NOT NULL AUTO_INCREMENT;
