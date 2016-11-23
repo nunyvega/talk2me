@@ -18,8 +18,7 @@ $maxFileSize = 1000000;
 
 $uploadError = "";
 $fileErrorMsg = "";
-$prueba = "";
-$inloop = "";
+
 //flow control: 
 
 $uploadSuccesfull = True;

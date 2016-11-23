@@ -26,6 +26,11 @@ include ("./php_includes/getcookies.php");
 </head>
 <body>
 
+<?php if($uploadSuccesfull == true){ ?>
+	<p>The upload was succesfull!</p>
+<?php } else {
+	# code...
+} { ?>
 	<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
 		<input type="text" name="uploadLink" placeholder="Insert youtube embed link">
@@ -33,7 +38,9 @@ include ("./php_includes/getcookies.php");
 		<textarea name="uploadDescription">Insert the video description</textarea>
 		<input type="text" name="ownerTags" placeholder="type your tags, semicolon separeted (;)">
 		<input type="text" name="uploadPlace" placeholder="recorded in:">
+
 		<div>
+
 			<p>Is your video an answer to some question?</p><br>
 			<input type="radio" name="isAnswer" value="1" disabled="true">Yes (not working yet) 
 																<!--Here we will have to add some js to, if set to yes, pop a
@@ -41,10 +48,10 @@ include ("./php_includes/getcookies.php");
 			<input type="radio" name="isAnswer" value="0" checked="true">No
 		</div>
 
-		<input type="submit" name="uploadVideo" value="Upload video">
+			<input type="submit" name="uploadVideo" value="Upload video">
 
 	</form>
-
+<?php } ?>
 
 
 </body>

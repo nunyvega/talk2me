@@ -7,6 +7,7 @@
 
       <link href="./css/style.css" type="text/css" rel="stylesheet"/>
       <link href="./css/header.css" type="text/css" rel="stylesheet"/>
+      <link href="./css/loginregister.css" type="text/css" rel="stylesheet"/>
 
 
 <!-- CDN includes    -->
@@ -21,10 +22,11 @@
 
 <!-- PHP includes -->
 
-      <?php include './php_includes/userauth.php'; ?>
-      <?php include './php_includes/getcookies.php'; ?>
-      <?php include './php_includes/loaduser.php'; ?>
-      <?php include './php_includes/socialfeatures.php';?>
+  <?php include './php_includes/userauth.php'; ?>
+  <?php include './php_includes/getcookies.php'; ?>
+  <?php include './php_includes/loaduser.php'; ?>
+  <?php include './php_includes/socialfeatures.php';?>
+  <?php include("loginregister.php"); ?>
 
 
     </head>
@@ -32,8 +34,6 @@
 <body <?php if($loginStarted == True){ echo 'onload="openLogin()"';}?> 
       <?php if($signupStarted == True){ echo 'onload="openSignup()"';}?> 
       >
-
-<?php include("loginregister.php"); ?>
 
     <!-- webpage -->
 
@@ -77,13 +77,30 @@
         <section id="main">
           <div class="row" id="mainContainer">
             <div id="videoContainer">
-               <iframe id="videoPlayer" src="https://www.youtube.com/embed/T3lCpuunSMo" frameborder="0"></iframe>
-               <div id="vInfoContainer">
+              <div id="vInfoContainer">
+                <p>here we'll insert the video title, description, etc?</p>
+              </div>
+              <iframe id="videoPlayer" src="https://www.youtube.com/embed/T3lCpuunSMo" frameborder="0"></iframe>
+              <div id="vSocialContainer">               
                 <ul id="socialButtons">
-                  <li class="bttn" id="socialBttn">Like</li>
+                  <li class="bttn" id="socialBttn">Collect</li>
                   <li class="bttn" id="socialBttn">Share</li>
-                  <li class="bttn" id="socialBttn">Embed</li>
+                  <!-- deleted "like" button, since the attributes will be in the tags and questions -->
                 </ul>
+                <div id="crowdTagsContainer">
+                  <div id="crowdTagBox">
+                    <p>Crowd Tag 3 <span class="tagAction bttn">give attr bttn</span></p>
+                    <p>Crowd Tag 2<span class="tagAction bttn">give attr bttn</span></p>
+                    <p>Crowd Tag 3<span class="tagAction bttn">give attr bttn</span></p>
+                  </div>
+                  <form id="newCrowdTag" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <input id="newCrowdTagInput" type="text" name="newCrowdTag" placeholder="Enter a tag to add to the post">
+                    <input type="submit" value="add tag">
+                  </form>
+                </div>
+
+<!--
+Comment this section to change it for _crowdtags section.
                 <table id="videoInfo">
                   <tr>
                     <td>Date recorded:<span id="recordedDate">2016/11/07</span></td>
@@ -94,21 +111,21 @@
                     <td>Recorded for:<span id="recordedFor">Question user</span></td>
                   </tr>
                 </table>
-
+-->
                </div>
 
             </div>
             <div id="relatedContainer">
               <div class="relCon_section" id="relCon_profile">
                 <div class="row relCon_title" id=talkingTo>Talking to: 
-                  <span id="userName"><?php echo ($vname." ".$vlastname." (".$vusername.")"); ?></span></div>
-                  <form method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?u='.$vuserid;?>">
+                  <span id="userName"><?php echo ($vname." ".$vlastname." (".$vusername.")"); ?></span>
+                  <form method="POST" id="followBttn" action="<?php echo $_SERVER['PHP_SELF'].'?u='.$vuserid;?>">
                     <input id=followBttn name="follow" type="submit"
                     <?php if($followed == true){ echo('disabled="true"');} ?>
                       <?php if($followed == true){ echo 'value="Following"';}
                                             else{ echo 'value="follow"'   ;}
                       ?>></form>
-                        
+                  </div>  
                 <div class="row">
                   <div id="profilePicture"><img src="<?php echo $vpicturePath; ?>"></div>
                   <div id="profileDescription">

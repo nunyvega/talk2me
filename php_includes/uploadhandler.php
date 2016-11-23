@@ -1,13 +1,15 @@
 <?php
+//Solano:
 //Upload content to the server.
 //While I'm building the userprofile page, I'll put a input of a youtube link to be able to create the posts in the db.
 //will work on the video uploading later on.
 
+include './php_includes/getcookies.php';
 //globals:
 $linkError = '';
 
 //flow control:
-$uploadSuccesfull = True;
+$uploadSuccesfull = '';
 
 
 //config:
@@ -25,6 +27,9 @@ function test_input($data) {
 //  script starts:
 
 if (isset($_POST['uploadVideo'])){
+
+	$uploadSuccesfull = true;
+
 	//sanitize data:
 
 	if(empty($_POST['uploadLink'])){
@@ -33,7 +38,7 @@ if (isset($_POST['uploadVideo'])){
 	} else {
 		$uploadLink = test_input($_POST['uploadLink']);
 		if(!preg_match('%^((https?://)|(www\.))([a-z0-9-].?)+(:[0-9]+)?(/.*)?$%i', $uploadLink)){
-			$linkError = "The url you embeded doesn't appear to be a correct url, please try again";
+			$linkError = "The url you embeded doesn't appear to be a proper url, please try again";
 			$uploadSuccesfull = False;
 		}
 	}
@@ -45,14 +50,15 @@ if (isset($_POST['uploadVideo'])){
 	}
 	if(empty($_POST['uploadDescription'])){
 		$descriptionError = "Please enter a short description of the subject you speak about in the video";
+		$uploadSuccesfull = false;
 	} else {
 		$uploadDescription = test_input($_POST['uploadDescription']);
 	}
 
 	$date = getdate();
 	$uploadDate = $date['year']."/".$date['month']."/".$date['mday']." at: ".$date['hours'].":".$date['minutes'];
-	$uploadPlace = "not working yet";
-	$isAnswer = 0;
+	$uploadPlace = "need to work on the geolocation";
+	$isAnswer = "false";
 
 	$uploadLink = mysqli_real_escape_string($conn, $uploadLink);
 	$uploadTitle = mysqli_real_escape_string($conn, $uploadTitle);
@@ -61,19 +67,21 @@ if (isset($_POST['uploadVideo'])){
 	$uploadPlace = mysqli_real_escape_string($conn, $uploadPlace);
 	$isAnswer = mysqli_real_escape_string($conn, $isAnswer);
 
-	print_r($uploadLink.$uploadTitle.$uploadDescription.$uploadDate.$uploadPlace.$isAnswer);
-	$sql = 'INSERT INTO posts (link, title, description, postdate, place, isanswer)
-					VALUES ("'.$uploadLink.'". "'.$uploadTitle.'", "'.$uploadDescription.'",
-					 "'.$uploadDate.'", "'.$uploadPlace.'", "'.$isAnswer.'")';
+
+
+	$sql = 'INSERT INTO posts (userid, link, title, description, postdate, place, isanswer)
+					VALUES ( "'.$userid.'" , "'.$uploadLink.'" , "'.$uploadTitle.'" , "'.$uploadDescription.'" ,
+					 "'.$uploadDate.'" , "'.$uploadPlace.'" , "'.$isAnswer.'")';
 
 	$result = mysqli_query($conn, $sql);
-	print_r(mysqli_affected_rows($conn));
-	
+
 	$postid = mysqli_insert_id($conn); //get the id the AUTO INCREMENT field in the las query, or return "0"
+	var_dump($postid);
 
 	if($postid == 0){
 		$uploadError = "There has been an error while storing your video. Please try again in a few minutes";
 		$uploadSuccesfull = False;
+		echo $uploadError;
 	}
 
 	if(empty($_POST['ownerTags'])){

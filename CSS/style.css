@@ -6,142 +6,6 @@
 de este estilo son muy piola vago https://designschool.canva.com/blog/100-color-combinations/
 con SASS todo esto se vuelve mucho mas facil tambien, a la prox web capaz podemos usarlo.*/
 
-/*-----------Login form ----------*/
-#loginFormContainer{
-	display: none;
-	background-color: rgba(0,0,0,0.4);
-	position: fixed;
-	width:100vw;
-	height:100vh;
-}
-#loginFormContent{
-	width:620px;
-	margin: 35px auto 0px auto;
-	background-color: white;
-	overflow: auto;
-}
-
-#loginFormHeader {
-	background-color: #8C9C9A;
-	margin-bottom: 35px;
-	height: 80px;
-}
-#loginFormHeader h2{
-	display:inline-block;
-
-	text-align: center;
-	width:560px;
-
-	color: white;
-}
-
-#loginFormContent #close{
-	float:right;
-	color: #A31E39;
-	cursor: pointer !important;
-	display: inline-block;
-	padding: 20px;
-}
-#loginFormBody{
-	width: 80%;
-	margin: 0px auto 0px auto;
-}
-.loginInput{
-	display: block;
-	width: 90%;
-	height: 40px;
-	border-radius: 12px;
-	margin: 20px auto 20px auto;
-	text-indent: 12px;
-}
-
-#loginSubmit{
-	margin: 20px auto 20px auto;
-}
-
-#loginFormFooter{
-	width:100%;
-	background-color: #8C9C9A;
-	height: 80px;
-	color:white;
-	text-align:center;
-	bottom: 0px;
-	line-height: 80px;
-
-}
-
-
-
-
-/*-----------Signup form ----------*/
-
-#signupFormContainer{
-	display: none;
-	background-color: rgba(0,0,0,0.4);
-	position: fixed;
-	width:100vw;
-	height:100vh;
-}
-#signupFormContent{
-	width:620px;
-	max-height: 90vh;
-	margin: 5vh auto 5vh auto;
-	background-color: white;
-	overflow: auto;
-}
-
-#signupFormHeader {
-	background-color: #8C9C9A;
-	margin-bottom: 35px;
-	height: 80px;
-}
-#signupFormHeader h2{
-	display:inline-block;
-
-	text-align: center;
-	width:540px;
-
-	color: white;
-}
-
-#signupFormContent #close{
-	float:right;
-	color: #A31E39;
-	cursor: pointer !important;
-	display: inline-block;
-	padding: 20px;
-}
-#signupFormBody{
-	width: 80%;
-	margin: 0px auto 0px auto;
-}
-.signupInput{
-	display: block;
-	width: 90%;
-	height: 40px;
-	border-radius: 12px;
-	margin: 20px auto 20px auto;
-	text-indent: 12px;
-}
-
-#signupSubmit{
-	margin: 20px auto 20px auto;
-}
-
-#signupFormFooter{
-	width:100%;
-	background-color: #8C9C9A;
-	height: 80px;
-	color:white;
-	text-align:center;
-	bottom: 0px;
-	line-height: 80px;
-
-}
-
-
-
-
 /*-----------globals classes ----------*/
 
 body{
@@ -290,44 +154,6 @@ a:active {
 #videoContainer{
 
 }
-#videoContainer iframe{
-	width: 630px;
-	height: 522.5px;
-	margin-bottom: 0px;
-}
-#vInfoContainer{
-	margin-top: 0px;
-	background-color:rgb(230,230,230);
-	width:width:630px;
-	height: 117.5px;
-
-}
-#vInfoContainer ul{
-	list-style-type: none !important;
-	display:flex;
-	justify-content: space-around;
-	width:600px;
-	margin:8px auto;
-}
-#vInfoContainer #socialButtons{
-
-	width: 320px;
-	padding: 10px 0px 0px 0px;
-}
-
-#socialBttn{
-
-	color:#485C5A;
-	font-size: 14px;
-	line-height: 26px;
-	padding: 0px 12px;
-	background-color:;
-	border: 1px solid ;
-}
-
-#vInfoContainer li{
-	display:inline-block;
-}
 
 #videoInfo{
 	width:90%;
@@ -344,6 +170,74 @@ a:active {
 	background-color: rgb(240,240,255);
 	margin-left: 15px;
 }
+
+#videoContainer iframe{
+	width: 630px;
+	height: 522.5px;
+	margin-bottom: 0px;
+}
+
+
+#socialButtons{
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	width: 320px;
+	margin: 0 auto 0 auto;
+	padding: 10px 0px 10px 0px;
+}
+
+#socialBttn{
+	width: 130px;
+	color:#485C5A;
+	font-size: 14px;
+	line-height: 26px;
+	padding: 0px 12px;
+	background-color:;
+	border: 1px solid ;
+}
+
+#crowdTagsContainer{
+	margin-top: 0px;
+	background-color:rgb(230,230,230);
+	width:630px;
+	padding: 12px 0 12px 0;
+
+
+}
+#crowdTagsContainer #crowdTagBox{
+	background-color: lightblue;
+	display:flex;
+	justify-content: space-around;
+	width:630px;
+}
+
+#crowdTagsContainer #crowdTagBox p{
+	margin:8px auto;
+	padding: 4px 6px 4px 6px;
+	border-radius: 8px;
+	background-color: white;
+}
+#crowdTagsContainer #crowdTagBox p span{
+	background-color: blue;
+	padding: 4px 6px 4px 6px;
+	border-radius: 8px;
+	color: white;
+	margin-left: 6px;
+	display:block;
+
+}
+
+#newCrowdTag{
+	width: 520px;
+	margin: 20px auto 20px auto;
+
+}
+
+#newCrowdTagInput{
+	width: 520px;
+}
+
 
 #relatedContainer{
 	width: 360px;
@@ -377,6 +271,10 @@ a:active {
 	margin-bottom: 14px;
 	line-height: 42px;
 	margin-bottom: 16px;
+}
+.relCon_title #followBttn {
+	display: block;
+
 }
 #talkingTo{
 	background-color: #485C5A;
