@@ -26,7 +26,7 @@
   <?php include './php_includes/getcookies.php'; ?>
   <?php include './php_includes/loaduser.php'; ?>
   <?php include './php_includes/socialfeatures.php';?>
-  <?php include("loginregister.php"); ?>
+  <?php include 'loginregister.php'; ?>
 
 
     </head>
@@ -89,13 +89,13 @@
                 </ul>
                 <div id="crowdTagsContainer">
                   <div id="crowdTagBox">
-                    <p>Crowd Tag 3 <span class="tagAction bttn">give attr bttn</span></p>
+                    <p>Crowd Tag 3<span class="tagAction bttn">give attr bttn</span></p>
                     <p>Crowd Tag 2<span class="tagAction bttn">give attr bttn</span></p>
                     <p>Crowd Tag 3<span class="tagAction bttn">give attr bttn</span></p>
                   </div>
                   <form id="newCrowdTag" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <input id="newCrowdTagInput" type="text" name="newCrowdTag" placeholder="Enter a tag to add to the post">
-                    <input type="submit" value="add tag">
+                    <input name="newCrowdTagSubmit" type="submit" value="add tag">
                   </form>
                 </div>
 

@@ -7,10 +7,11 @@
 include ("./php_includes/dbconnect.php");
 include ("./php_includes/uploadhandler.php");
 include ("./php_includes/getcookies.php");
-
 ?>
 <HTML>
 <head>
+
+<script type="text/javascript" src="./js/taghints.js"></script>
 <style style="display:none;">
 	*{
 		display:block;
@@ -20,6 +21,19 @@ include ("./php_includes/getcookies.php");
 	}
 	textarea{
 		height: 120px;
+	}
+	#tagHintContainer{
+		display:block;
+		height: 45px;
+
+	}
+	#tagHintContainer p{
+		background-color: rgb(110,110,110);
+		border-radius: 12px;
+		cursor: pointer;
+		color: white;
+		padding: 8px 12px;
+		margin: 8px 12px;
 	}
 </style>	
 
@@ -36,7 +50,9 @@ include ("./php_includes/getcookies.php");
 		<input type="text" name="uploadLink" placeholder="Insert youtube embed link">
 		<input type="text" name="uploadTitle" placeholder="Insert video title">
 		<textarea name="uploadDescription">Insert the video description</textarea>
-		<input type="text" name="ownerTags" placeholder="type your tags, semicolon separeted (;)">
+		<input type="text" name="ownerTags" placeholder="type your tags, semicolon separeted (;)" onkeyup="crowdTagHint(this.value)">
+		<div id="tagHintContainer">
+		</div>
 		<input type="text" name="uploadPlace" placeholder="recorded in:">
 
 		<div>
