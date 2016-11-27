@@ -98,6 +98,8 @@ if(isset($_GET['u']) ){
 
 		}
 	}
+	$vuserFriendsJson = JSON_encode($vuserFriends);
+
 
 	//get the user topics:
 

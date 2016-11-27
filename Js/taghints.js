@@ -8,7 +8,7 @@ function crowdTagHint(searchStr) {
 		document.getElementById("tagHintContainer").innerHTML = "Start typing a tag to see the available tags";
 		return;
 	} else {
-		var xhttp 
+		var xhttp;
 		if (window.XMLHttpRequest){ //initialize xmlhttp object for IE7+, chrome, Opera and Safari
 			xhttp = new XMLHttpRequest();
 		} else {

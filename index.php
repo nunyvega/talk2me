@@ -17,8 +17,9 @@
 
 <!-- Javascript includes -->
 
-      <script type='text/javascript' src='./js/main.js'></script>
+      <script src='./js/main.js'></script>
       <script src="./js/header.js"></script>
+      <script src="./js/loaduser.js"></script>
 
 <!-- PHP includes -->
 
@@ -27,6 +28,8 @@
   <?php include './php_includes/loaduser.php'; ?>
   <?php include './php_includes/socialfeatures.php';?>
   <?php include 'loginregister.php'; ?>
+
+
 
 
     </head>
@@ -72,7 +75,9 @@
       </div>
 
       <!-- Body  -->
-      
+
+
+      <div id="demo"></div>
       <div id="content">
         <section id="main">
           <div class="row" id="mainContainer">
@@ -168,10 +173,16 @@ Comment this section to change it for _crowdtags section.
           </div>
         </div>
       </section>
+
       <hr class="sectionDivision">
+
       <section id="userFriends">
         <h2>Alvaro likes to talk to:</h2>
         <ul id="userFriendsContainer">
+        
+        <!-- Solano: Commented the php construction of the user profiles while working on loading the 
+            user friends using json and js
+
         <?php for($i = 0; $i < count($vuserFriends); $i++){
             echo '<li>';
               echo '<div class="row friendProfile">';
@@ -193,7 +204,7 @@ Comment this section to change it for _crowdtags section.
                   echo '</div>';
                 echo '</li>';
           }
-          ?>
+          ?> -->
         </ul>
         <center><p>See more</p></center>
 
@@ -206,5 +217,15 @@ Comment this section to change it for _crowdtags section.
 
       </div>
     </div>
+<!--  code to check if the json encoding is working
+<script type="text/javascript">
+        var vuserFriends = JSON.parse('<?php echo($vuserFriendsJson); ?>');
+        document.getElementById("demo").innerHTML = vuserFriends[0]['fusername'];
+
+      </script>
+      <?php print_r($vuserFriends); ?>
+      <br><br><br><br>
+      <?php print $vuserFriendsJson; ?> -->
+
 
 </html>
