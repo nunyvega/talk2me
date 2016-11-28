@@ -1,5 +1,14 @@
 
       <?php 
+
+
+
+function testInput($data){
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+    }
+
       //get cookies:
       if (isset($_COOKIE["logged"])){
 
@@ -15,6 +24,11 @@
         $spokenLanguage = $_COOKIE["spokenLanguage"];
 
         
+      }
+
+      if (isset($_GET['u'])){
+        $vuserid = testInput($_GET['u']);
+
       }
 
 

@@ -2,13 +2,12 @@
 include ("../php_includes/dbconnect.php");
 
 //variable declarations:
-$query ='';
 $tagHints = array();
 
 
 // Get crowd tag hints:
 
-$query = $_GET['query'];
+$query = $_REQUEST['query'];
 
 $sql = 'SELECT tagname FROM _tags WHERE ( tagname LIKE "'.$query.'%")';
 $result = mysqli_query($conn, $sql);

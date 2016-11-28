@@ -17,7 +17,7 @@ function crowdTagHint(searchStr) {
 		xhttp.onreadystatechange = function (){
 			if (this.readyState == 4 && this.status == 200){
 				response = xhttp.responseText;
-				tags = JSON.parse(response);
+				var tags = JSON.parse(response);
 				var i = 0;
 				var tagCount = tags.length;
 				var tagHints;

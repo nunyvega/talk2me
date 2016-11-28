@@ -1,6 +1,7 @@
 <?php
 //this php include loads the full profile of a user.
 //it is intended to fill a user profile when visited
+include '/dbconnect.php';
 
 // Globals:
 
@@ -19,9 +20,12 @@ $postsCount = 0;
 
 //if the userid is set via GET: start script:
 
-if(isset($_GET['u']) ){
+
+
+if(isset($_REQUEST['u']) ){
 	//get the user id
-	$vuserid = $_GET['u'];
+
+	$vuserid = $_REQUEST['u'];
 	
 	//get the user information from users database table:
 
@@ -95,11 +99,11 @@ if(isset($_GET['u']) ){
 							);
 			//push the entire friend array as one key to the $vuserFriends array:
 			array_push($vuserFriends, $friend);
-
 		}
 	}
-	$vuserFriendsJson = JSON_encode($vuserFriends);
-
+	
+	echo (JSON_encode($vuserFriends));
+}
 
 	//get the user topics:
 
@@ -107,4 +111,4 @@ if(isset($_GET['u']) ){
 	//get the user posts:
 
 
-}
+

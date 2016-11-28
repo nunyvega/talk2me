@@ -18,16 +18,16 @@
 <!-- Javascript includes -->
 
       <script src='./js/main.js'></script>
-      <script src="./js/header.js"></script>
+      <script src='./js/header.js'></script>
+      <script> var vuserid = Number(<?php if(isset($_GET['u'])){ echo($_GET['u']); } ?>);</script>
       <script src="./js/loaduser.js"></script>
 
 <!-- PHP includes -->
 
   <?php include './php_includes/userauth.php'; ?>
   <?php include './php_includes/getcookies.php'; ?>
-  <?php include './php_includes/loaduser.php'; ?>
-  <?php include './php_includes/socialfeatures.php';?>
-  <?php include 'loginregister.php'; ?>
+  <!--<?php include './php_includes/socialfeatures.php';?> needs to be transformed into ajax/js. $vuser%variables% not working since loaduser.php is treated like a xmlhttprequest-->
+  <?php include './loginregister.php'; ?>
 
 
 
@@ -35,45 +35,15 @@
     </head>
     <!-- open login or regsiter if there's a login or registration in progress.--> 
 <body <?php if($loginStarted == True){ echo 'onload="openLogin()"';}?> 
-      <?php if($signupStarted == True){ echo 'onload="openSignup()"';}?> 
+      <?php if($signupStarted == True){ echo 'onload="openSignup()"';}?>
+      onload="userFriends()"
       >
-
     <!-- webpage -->
 
     <div id="MainContainer">
     <!-- HEADER  -->
 
-      <div id="header">
-        <div id="headerContainer">
-          <div id="brandContainer"> <a href='index.php'><h1>Talk2me</h1></a></div>
-          <form action="./search.php" id="searchBar"><input type="text" name="searchKeyword" id="searchField" placeholder="search"></form>
-          <div id="loginContainer">
-          <!-- if the user has logged in: -->
-          <?php if (isset($_COOKIE['logged']) or $loginReady == True){ ?>            
-            <div class="row" id="headerProfile">
-              <div id="dropDownMenu">
-                <img src="./images/icons/arrow_down.png" id="arrowDown" onclick="openProfileMenu()">
-                <ul id="dropDownContent">
-                  <li><img src="./images/icons/edit_profile.png"><a class="dropDownText" href="./editprofile.php">My profile</a></li>
-                  <li><img src="./images/icons/upload_video.png"><a class="dropDownText" href="./uploadvideo.php">Upload Video</a></li>
-                  <li><img src="./images/icons/log_out.png"><a class="dropDownText" href="./logout.php">log out</a></li>
-                </ul>
-              </div>
-              <p id="headerUsername"><?php echo $username; ?></p>
-              <img src="<?php echo $picturePath; ?>">
-
-
-            </div>
-
-          <?php } else { ?>
-          <!-- if the user has not logged in: -->
-            <p class="bttn loginBttn" id="login" onclick="openLogin()">Log-in</p>
-            <p class="bttn loginBttn" id="signup" onclick="openSignup()">Sign-Up</p>
-          <?php } ?>
-          </div>
-        </div>
-      </div>
-
+<?php include './php_includes/header.php' ?>
       <!-- Body  -->
 
 
@@ -176,9 +146,9 @@ Comment this section to change it for _crowdtags section.
 
       <hr class="sectionDivision">
 
-      <section id="userFriends">
+      <section id="userFriends" >
         <h2>Alvaro likes to talk to:</h2>
-        <ul id="userFriendsContainer">
+        <ul  id="userFriendsContainer">
         
         <!-- Solano: Commented the php construction of the user profiles while working on loading the 
             user friends using json and js
@@ -206,7 +176,7 @@ Comment this section to change it for _crowdtags section.
           }
           ?> -->
         </ul>
-        <center><p>See more</p></center>
+        <center><p id="seeMoreFriends" onclick="getMoreUsers()">See more</p></center>
 
       </section>
     </div>
@@ -217,15 +187,6 @@ Comment this section to change it for _crowdtags section.
 
       </div>
     </div>
-<!--  code to check if the json encoding is working
-<script type="text/javascript">
-        var vuserFriends = JSON.parse('<?php echo($vuserFriendsJson); ?>');
-        document.getElementById("demo").innerHTML = vuserFriends[0]['fusername'];
-
-      </script>
-      <?php print_r($vuserFriends); ?>
-      <br><br><br><br>
-      <?php print $vuserFriendsJson; ?> -->
 
 
 </html>
